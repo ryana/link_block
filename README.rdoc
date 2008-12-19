@@ -41,8 +41,7 @@ or turned off via:
 
 == Todo
 
-Current testing is non-existant... but it works on Rails 2.2.2 from my manual testing.  Hope to write tests within a day or two.  Getting late.
-Can't see straight anymore.
+Now relies on PlugTest for testing.  http://github.com/ryana/plug_test
 
 == Thanks
 
