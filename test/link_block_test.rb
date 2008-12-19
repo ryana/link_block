@@ -17,7 +17,6 @@ class LinkBlockTest < Test::Unit::TestCase
   end
 
   def test_link_block_yields_simple_link_tos
-    # Tried to make this a block... was taking too long.
     res = pt_helper do |a|
       a.link_block(:controller => 'regular') { |lb| lb.link_to 'Sweet', :action => 'test' }
     end
