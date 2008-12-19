@@ -18,10 +18,22 @@ class LinkBlockTest < Test::Unit::TestCase
 
   def test_link_block_yields_simple_link_tos
     # Tried to make this a block... was taking too long.
-    res = pt_helper("link_to 'Sweet', :action => 'test'")
+    res = pt_helper do |a|
+      a.link_block(:controller => 'regular') { |lb| lb.link_to 'Sweet', :action => 'test' }
+    end
 
     assert_select 'a', 'Sweet'
-    assert_match(/Sweet/, res)
+    assert_select HTML::Selector.new("a[href=/regular/test]")
+  end
+
+  def test_link_block_attaches_class_when_link_is_current
+    res = pt_helper do |a|
+      a.link_block(:controller => 'plug_test') { |lb| lb.link_to 'Sweet', :action => 'test_action' }
+    end
+
+    assert_select 'a', 'Sweet'
+    assert_select HTML::Selector.new("a[class~=#{LinkBlock::Config.current_class_name}]")
+    assert_select HTML::Selector.new("a[href=/plug_test/test_action]")
   end
 
 end
