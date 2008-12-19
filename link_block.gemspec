@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ryan Angilly"]
   s.date = %q{2008-12-19}
-  s.description = %q{Generate a block of link_to's that share parameters.}
+  s.description = %q{Generate a block of link_to calls that share parameters.}
   s.email = %q{ryan@angilly.com}
   s.extra_rdoc_files = ["README.rdoc", "lib/link_block.rb", "lib/link_block/config.rb", "lib/link_block/view_helpers.rb"]
   s.files = ["Manifest", "README.rdoc", "init.rb", "lib/link_block.rb", "lib/link_block/config.rb", "lib/link_block/view_helpers.rb", "test/link_block_test.rb", "Rakefile", "link_block.gemspec"]
